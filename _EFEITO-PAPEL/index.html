@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      .paper {
+        background: #fff;
+        padding: 30px;
+        position: relative;
+        width:80%;
+        margin: 0 auto;
+      }
+      
+      .paper,
+      .paper::before,
+      .paper::after {
+        /* Styles to distinguish sheets from one another */
+        box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+        border: 1px solid #bbb;
+      }
+      
+      .paper::before,
+      .paper::after {
+        content: "";
+        position: absolute;
+        height: 95%;
+        width: 99%;
+        background-color: #eee;
+      }
+      
+      .paper::before {
+        right: 15px;
+        top: 0;
+        transform: rotate(-1deg);
+        z-index: -1;
+      }
+      
+      .paper::after {
+        top: 5px;
+        right: -5px;
+        transform: rotate(1deg);
+        z-index: -2;
+      }
+
+      /* -------------------------------- */
+      .paper1 {
+  background: #fff;
+  box-shadow:
+    /* The top layer shadow */
+    0 -1px 1px rgba(0,0,0,0.15),
+    /* The second layer */
+    0 -10px 0 -5px #eee,
+    /* The second layer shadow */
+    0 -10px 1px -4px rgba(0,0,0,0.15),
+     /* The third layer */
+    0 -20px 0 -10px #eee,
+    /* The third layer shadow */
+    0 -20px 1px -9px rgba(0,0,0,0.15);
+    /* Padding for demo purposes */
+    padding: 30px;
+    width:80%;
+        margin: 0 auto;
+}
+
+/* ---------------- */
+      
+      /* Diagonal stacked paper effect */
+.paper2 {
+  background-color: #fff;
+  /* Need position to allow stacking of pseudo-elements */
+  position: relative;
+  /* Padding for demo purposes */
+  padding: 30px;
+  width:80%;
+        margin: 0 auto;
+}
+
+.paper2,
+.paper2::before,
+.paper2::after {
+  /* Add shadow to distinguish sheets from one another */
+  box-shadow: 2px 1px 1px rgba(0,0,0,0.15);
+}
+
+.paper2::before,
+.paper2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+/* Second sheet of paper */
+.paper2::before {
+  left: 7px;
+  top: 5px;
+  z-index: -1;
+}
+
+/* Third sheet of paper */
+.paper2::after {
+  left: 12px;
+  top: 10px;
+  z-index: -2;
+}
+      </style>
+</head>
+<body>
+    <br><br><br><br><br><br>
+<div class="paper">teste</div>
+<br><br><br>
+<hr>
+<br><br><br>
+<div class="paper1">teste</div>
+<br><br><br>
+<hr>
+<br><br><br>
+<div class="paper2">teste</div>
+</body>
+</html>
